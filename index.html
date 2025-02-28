@@ -33,14 +33,18 @@
 
             messages.innerHTML += "<p><strong>You:</strong> " + userInput + "</p>";
 
-            fetch("https://script.google.com/macros/s/AKfycbyFMxWUULi_VdtZMt1Errm9GrPTMWRlTnDEeEvpCeg9HwSRRK6Ws_v7zTapFZL4BxTo/exec", { 
+            fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_WEBAPP_URL/exec", { 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: userInput })
             })
             .then(response => response.json())
             .then(data => {
-                messages.innerHTML += "<p><strong>HEALLY AI:</strong> " + data.response + "</p>";
+                if (data.response) {
+                    messages.innerHTML += "<p><strong>HEALLY AI:</strong> " + data.response + "</p>";
+                } else {
+                    messages.innerHTML += "<p><strong>HEALLY AI:</strong> Unexpected response format.</p>";
+                }
             })
             .catch(error => {
                 messages.innerHTML += "<p><strong>HEALLY AI:</strong> Error connecting to the AI.</p>";
