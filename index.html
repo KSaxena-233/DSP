@@ -33,7 +33,7 @@
 
             messages.innerHTML += "<p><strong>You:</strong> " + userInput + "</p>";
 
-            fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_WEBAPP_URL/exec", { 
+            fetch("https://script.google.com/macros/s/AKfycbwdQ3B0AOHM81D6B8WCiLjIs_FrQFr5d-H1_sYENAcnanzfNRKIzQLhK-c7PWWewCWH/exec", { 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: userInput })
