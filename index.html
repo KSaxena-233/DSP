@@ -28,12 +28,12 @@
         function sendMessage() {
             let userInput = document.getElementById("userInput").value;
             let messages = document.getElementById("messages");
-            
+
             if (!userInput) return;
 
             messages.innerHTML += "<p><strong>You:</strong> " + userInput + "</p>";
 
-            fetch("https://script.google.com/macros/s/YOUR_DEPLOYED_WEBAPP_URL/exec", { // Replace with your Web App URL
+            fetch("https://script.google.com/macros/s/AKfycbwI9KdkwvrcYO-GLHdES3Mgi61D3hjHhDwqCtRDSBc7fHKu7nZIoUyj4Xbf_QuXf9iG/exec", { 
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ message: userInput })
